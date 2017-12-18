@@ -228,7 +228,7 @@ class PopulateCommand extends Command
                 Events::ON_EXCEPTION,
                 function(OnExceptionEvent $event) use ($loggerClosure, $options) {
                     $loggerClosure(
-                        $options['batch_size'],
+                        100,
                         count($event->getObjects()),
                         sprintf('<error>%s</error>', $event->getException()->getMessage())
                     );
